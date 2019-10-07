@@ -34,13 +34,44 @@ mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \
 	  <scope>test</scope>  
 	</dependency>
 
+
+## Usage of Metrics & Health
+### Metrics:
+
+-   @Counted - is a metric annotation on the `list()` method to count how many times the list of systems method is requested.
+
+In Code example: `@Counted(name = "getNumberOfSedans")`
+
+-   @Timed - basically creates a timer when the method is created so you can measure how long it takes from invokation to the response.
+
+In Code example: `@Timed(name = "timer", description = "This is how long it takes to perform this task: ", unit = MetricUnits.MILLISECONDS)`
+
+-   @Gauge - A gauge is a metric that represents a single numerical value that can arbitrarily go up and down. Eg. counter for requests
+
+The corresponding curl statement would be:
+```
+curl -H"Acept: application/json" localhost:8181/metrics/application
+
+```
+
+### Health:
+The corresponding curl statement would be:
+```
+curl -H"Acept: application/json" http://localhost:8181/health
+
+```
+
+
 ## Research
 **Prometheus:**
+
+
 
    [Prometheus](https://github.com/prometheus) is a application used for event monitoring and alerting.
 
 
 
 **Istio:**
+
 [Istio](https://istio.io/) let's you control the flow of traffic and API calls between services, conduct a range of tests, and upgrade gradually with deployments. Istio is a so called "service-mesh", a service mesh is a dedicated infrastructure layer that controls service-to-service communication over a network. It provides a method in which separate parts of an application can communicate with each other. Service meshes appear commonly in concert with cloud-based applications, containers and **microservices**.
 
