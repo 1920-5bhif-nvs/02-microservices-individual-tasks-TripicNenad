@@ -50,16 +50,22 @@ In Code example: `@Timed(name = "timer", description = "This is how long it take
 
 The corresponding curl statement would be:
 ```
-curl -H"Acept: application/json" localhost:8181/metrics/application
+curl -H"Accept: application/json" localhost:8181/metrics/application
 
 ```
+
+![alt text](metrics.jpg)
+
+
 
 ### Health:
 The corresponding curl statement would be:
 ```
-curl -H"Acept: application/json" http://localhost:8181/health
+curl -H"Accept: application/json" http://localhost:8181/health
 
 ```
+
+![alt text](health.jpg)
 
 
 ## Research
