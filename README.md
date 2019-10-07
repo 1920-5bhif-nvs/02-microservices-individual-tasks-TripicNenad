@@ -1,5 +1,5 @@
 ﻿# 02-microservices-individual-tasks by Tripic Nenad
-I've made a **quarkus**-application, which basically adds a few methods to the [project](https://github.com/1920-5bhif-nvs/01-assignment-quarkus-jpa-TripicNenad) from the last homework. Additionally I added a few unit tests to test these methods and to show that i perfectly cooperates with the other independent project = **MICROSERVICES**.
+I've made a **quarkus**-application, which basically adds a few methods to the [project](https://github.com/1920-5bhif-nvs/01-assignment-quarkus-jpa-TripicNenad) from the last homework. Additionally I added a few unit tests to test these methods and to show that it perfectly works with the other independent project = **MICROSERVICES**.
 
 ## Create:
 
