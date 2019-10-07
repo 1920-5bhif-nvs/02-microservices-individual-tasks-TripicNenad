@@ -54,7 +54,7 @@ curl -H"Accept: application/json" localhost:8181/metrics/application
 
 ```
 
-![alt text](metrics.jpg)
+![](https://github.com/1920-5bhif-nvs/02-microservices-individual-tasks-TripicNenad/blob/master/metrics.JPG)
 
 
 
@@ -65,7 +65,7 @@ curl -H"Accept: application/json" http://localhost:8181/health
 
 ```
 
-![alt text](health.jpg)
+![alt text](https://github.com/1920-5bhif-nvs/02-microservices-individual-tasks-TripicNenad/blob/master/health.JPG)
 
 
 ## Research
