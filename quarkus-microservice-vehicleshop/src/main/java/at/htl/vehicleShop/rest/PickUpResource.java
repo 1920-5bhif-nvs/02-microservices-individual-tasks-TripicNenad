@@ -1,11 +1,10 @@
 package at.htl.vehicleShop.rest;
 
-import at.htl.vehicleShop.business.SedanService;
+import at.htl.vehicleShop.business.PickUpService;
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -14,27 +13,27 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/api")
-public class SedanResource {
+public class PickUpResource {
     @Inject
     @RestClient
-    SedanService sedanService;
+    PickUpService pickUpService;
 
-    //Count how many sedans there are
+    //Count how many pickups there are
     @GET
-    @Path("/sedan/amount")
+    @Path("/pickup/amount")
     @Produces(MediaType.TEXT_PLAIN)
-    @Counted(name = "getNumberOfSedans")
+    @Counted(name = "getNumberOfPickUps")
     @Timed(name = "timer", description = "This is how long it takes to perform this task: ", unit = MetricUnits.MILLISECONDS)
-    public int getNumberOfSedans(){return sedanService.getSedan().size();}
-
-    //average horsepower of sedans
-    @GET
-    @Path("/sedan/avg/horsepower")
-    @Produces(MediaType.TEXT_PLAIN)
-    @Counted(name = "getAvgHorsepowerOfSedans")
-    public double getAvgHorsepower(){
-        return sedanService.getSedan().stream().mapToDouble(s -> s.getHorsepower()).average().getAsDouble();
+    public int getNumberOfPickUps() {
+        return pickUpService.getPickUp().size();
     }
 
-
+    //average maxLoads of pickups
+    @GET
+    @Path("/pickup/avg/maxload")
+    @Produces(MediaType.TEXT_PLAIN)
+    @Counted(name = "getAvgMaxLoads")
+    public double getAvgMaxLoads() {
+        return pickUpService.getPickUp().stream().mapToDouble(p -> p.getMaxLoad()).average().getAsDouble();
+    }
 }
