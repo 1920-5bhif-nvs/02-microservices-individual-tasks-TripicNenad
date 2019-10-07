@@ -10,12 +10,33 @@ import static org.hamcrest.CoreMatchers.is;
 public class vehicleShopResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testSedanCount(){
         given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("hello"));
+                .when()
+                .get("/api/sedan/amount")
+                .then()
+                .statusCode(200)
+                .body(is("8"));
+    }
+
+    @Test
+    public void testSedanAvgHorsepower(){
+        given()
+                .when()
+                .get("api/sedan/avg/horsepower")
+                .then()
+                .statusCode(200)
+                .body(is("470.0"));
+    }
+
+    @Test
+    public void testSedanAvgPassengers(){
+        given()
+                .when()
+                .get("api/sedan/avg/passengers")
+                .then()
+                .statusCode(200)
+                .body(is("5.0"));
     }
 
 }

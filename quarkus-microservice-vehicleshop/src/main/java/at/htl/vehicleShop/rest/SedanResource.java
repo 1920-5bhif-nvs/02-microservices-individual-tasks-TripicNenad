@@ -36,5 +36,14 @@ public class SedanResource {
         return sedanService.getSedan().stream().mapToDouble(s -> s.getHorsepower()).average().getAsDouble();
     }
 
+    //average seats in sedans
+    @GET
+    @Path("/sedan/avg/passengers")
+    @Produces(MediaType.TEXT_PLAIN)
+    @Counted(name = "getAvgPassengers")
+    public double getAvgPassengers(){
+        return sedanService.getSedan().stream().mapToInt(s -> s.getMaxNumOfPassengers()).average().getAsDouble();
+    }
+
 
 }
