@@ -1,4 +1,6 @@
-﻿# 02-microservices-individual-tasks by Tripic Nenad
+## 02-microservices-individual-tasks by Tripic Nenad
+
+﻿
 I've made a **quarkus**-application, which basically adds a few methods to the [project](https://github.com/1920-5bhif-nvs/01-assignment-quarkus-jpa-TripicNenad) from the last homework. Additionally I added a few unit tests to test these methods and to show that it perfectly works with the other independent project = **MICROSERVICES**.
 
 ## Create:
@@ -81,3 +83,21 @@ curl -H"Accept: application/json" http://localhost:8181/health
 
 [Istio](https://istio.io/) let's you control the flow of traffic and API calls between services, conduct a range of tests, and upgrade gradually with deployments. Istio is a so called "service-mesh", a service mesh is a dedicated infrastructure layer that controls service-to-service communication over a network. It provides a method in which separate parts of an application can communicate with each other. Service meshes appear commonly in concert with cloud-based applications, containers and **microservices**.
 
+**Retry:**
+
+With the retry policy you can limit the amount of retries `maxRetries`, the delay `delay` and the max. duration of the request `maxDuration`. You can also add `jitter` which basically allows you to describe the error. 
+ 
+ **Fallback**
+
+ If several requestes do not lead to the right result you can then fallback to another predefined result. 
+
+**Circuit Breaker**
+
+A circuit breaker aborts the request if the service has been marked as broken or the service is currently not working
+
+**Bulkhead**
+
+Helps to keep the error locally. This is especially helpful when you are looking for the faulty code or faulty service.
+
+
+[Further details](https://jaxenter.de/java-ee-microservices-66077/2)
